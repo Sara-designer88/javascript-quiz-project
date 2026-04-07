@@ -13,14 +13,11 @@ class Question {
   // should shuffle the elements stored in the choices array property.
   shuffleChoices() {
       for (let i = this.choices.length - 1; i > 0; i--) {
-        // Pick a random index from 0 to i
-        const randomIndex = Math.floor(Math.random() * (i + 1));
+        // Pick a random index from 0 to i 
+        const j = Math.floor(Math.random() * (i+1));
         // Swap elements
-        [this.choices[i],this.choices[randomIndex]] = [this.choices[randomIndex],this.choices[i]];
-      
-    }
 
-      return choices;
-    
+        [this.choices[i],this.choices[j]] = [this.choices[j],this.choices[i]];
+    }
   }
 }
