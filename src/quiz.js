@@ -36,13 +36,15 @@ class Quiz {
 
     // 5. checkAnswer(answer)
     //should increase correctAnswers by 1 when called with a correct answer for the current question
-    // ask Jorge what is this ??
+    
     checkAnswer(answer){
-    if(answer.length !== 0){
-       this.correctAnswers++
+        if (answer === this.questions[this.currentQuestionIndex].answer){
+            this.correctAnswers++
+        }
+        return this.correctAnswers
     }
         
-    }
+    
 
     // 6. hasEnded()
     //should return false when currentQuestionIndex is less than the questions array length
@@ -54,7 +56,8 @@ class Quiz {
    else if (this.currentQuestionIndex = this.questions.length){
     return true
    }
-    }
+}
+    
 
    filterQuestionsByDifficulty(difficulty){
     if(difficulty >=1 && difficulty <=3 ){
@@ -63,19 +66,18 @@ class Quiz {
    })
 
    return this.questions
-    }
-
-}
+    } }
 
 
 
 
-    averageDifficulty(){
-       const total = this.questions.reduce((sum,element)=> {
+    averageDifficulty() {
+       
+        const total = this.questions.reduce((sum,element)=> {
          return sum + element.difficulty
         },0)
 
         return total / this.questions.length
-
     }
+
 }
