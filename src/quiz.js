@@ -22,32 +22,6 @@ class Quiz {
     this.currentQuestionIndex++;
   }
 
-<<<<<<< HEAD
-    // 5. checkAnswer(answer)
-    //should increase correctAnswers by 1 when called with a correct answer for the current question
-    
-    checkAnswer(answer){
-        if (answer === this.questions[this.currentQuestionIndex].answer){
-            this.correctAnswers++
-        }
-        return this.correctAnswers
-    }
-        
-    
-
-    // 6. hasEnded()
-    //should return false when currentQuestionIndex is less than the questions array length
-    //should return true when currentQuestionIndex is equal to the questions array length
-    hasEnded(){
-   if (this.currentQuestionIndex  < this.questions.length){
-    return false 
-   }
-   else if (this.currentQuestionIndex = this.questions.length){
-    return true
-   }
-}
-    
-=======
   // 4. shuffleQuestions()
   //should shuffle the items in the questions array.
   shuffleQuestions() {
@@ -82,7 +56,6 @@ class Quiz {
       return true;
     }
   }
->>>>>>> 23762b66b9e6eac1a7c0c28a30b5fb90218d0fea
 
   filterQuestionsByDifficulty(difficulty) {
     if (difficulty >= 1 && difficulty <= 3) {
@@ -90,7 +63,6 @@ class Quiz {
         return element.difficulty === difficulty;
       });
 
-<<<<<<< HEAD
    return this.questions
     } }
 
@@ -106,17 +78,4 @@ class Quiz {
         return total / this.questions.length
     }
 
-=======
-      return this.questions;
-    }
-  }
-
-  averageDifficulty() {
-    const total = this.questions.reduce((sum, element) => {
-      return sum + element.difficulty;
-    }, 0);
-
-    return total / this.questions.length;
-  }
->>>>>>> 23762b66b9e6eac1a7c0c28a30b5fb90218d0fea
 }
